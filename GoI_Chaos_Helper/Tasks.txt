@@ -1,0 +1,9 @@
+﻿--Display icons for positions next to names
+--Calibrate color values, to make it pretty
+--Implement Crop
+--Add help file
+--Add tooltips for Next button, and tabs
+--Reorder rects BEFORE CREATING NAMES to a more sane order
+--Create Text based display
+--Implement history
+--Implement settings menu for changing some minor things

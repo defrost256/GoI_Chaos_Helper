@@ -49,6 +49,13 @@ namespace GoI_Chaos_Helper
                 filterRects();
                 if (rects.Count % 8 != 0)
                     throw new ArgumentException("Invalid image file, unable to find players");
+                names.Clear();
+                currentPosOfName.Clear();
+                currentNameInPos.Clear();
+                finalNameInPos.Clear();
+                finalPosOfName.Clear();
+                currentPos = 0;
+                nextButton.Enabled = true;
                 foreach(Rectangle r in rects)
                 {
                     names.Add(final.Clone(r, final.PixelFormat));
@@ -64,6 +71,13 @@ namespace GoI_Chaos_Helper
             if (rects != null)
                 foreach (Rectangle r in rects)
                     graphics.DrawRectangle(rectPen, r);
+        }
+
+        private void nextButton_Click(object sender, EventArgs e)
+        {
+            displayNext();
+            if (currentPos == rects.Count)
+                nextButton.Enabled = false;
         }
 
         private void QuitApp(object sender, EventArgs e)
@@ -125,11 +139,6 @@ namespace GoI_Chaos_Helper
             return rects;
         }
 
-        private void nextButton_Click(object sender, EventArgs e)
-        {
-            displayNext();
-        }
-
         private bool isInColorRange(SearchState state, Color color)
         {
             return
@@ -183,7 +192,22 @@ namespace GoI_Chaos_Helper
             foreach (Rectangle r in rects)
                 avg += r.Height;
             avg /= rects.Count;
-            rects.RemoveAll(r => r.Height < avg);            
+            rects.RemoveAll(r => r.Height < avg);
+            rects.Sort(delegate (Rectangle r1, Rectangle r2)
+            {
+                if (r1.Location.X < r2.Location.X)
+                    return -1;
+                if (r1.Location.X > r2.Location.X)
+                    return 1;
+                else
+                {
+                    if (r1.Location.Y < r2.Location.Y)
+                        return -1;
+                    if (r1.Location.Y > r2.Location.Y)
+                        return 1;
+                }
+                return 0;
+            });
         }
 
         private void shuffle(int factor)
@@ -220,7 +244,7 @@ namespace GoI_Chaos_Helper
         private void makeFinalImage()
         {
             for (int i = 0; i < finalPosOfName.Count; i++)
-                placeImage(names[finalPosOfName[i]], final, rects[i].Location);
+                placeImage(names[finalNameInPos[i]], final, rects[i].Location);
         }
 
         private void displayNext()
@@ -235,6 +259,8 @@ namespace GoI_Chaos_Helper
             currentPosOfName[name2] = pos2;
             placeImage(names[name1], cont, rects[pos1].Location);
             placeImage(names[name2], cont, rects[pos2].Location);
+            contImage.Invalidate();
+            currentPos++;
         }
     }
 }
