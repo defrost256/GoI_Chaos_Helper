@@ -36,25 +36,28 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.leftSwapPicture = new System.Windows.Forms.PictureBox();
-            this.arrowPicture = new System.Windows.Forms.PictureBox();
-            this.rightSwapPicture = new System.Windows.Forms.PictureBox();
             this.nextButton = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.contTab = new System.Windows.Forms.TabPage();
-            this.contImage = new System.Windows.Forms.PictureBox();
             this.finalTab = new System.Windows.Forms.TabPage();
+            this.mainShipText = new System.Windows.Forms.TextBox();
+            this.contImage = new System.Windows.Forms.PictureBox();
             this.finalImage = new System.Windows.Forms.PictureBox();
+            this.mainRoleImage = new System.Windows.Forms.PictureBox();
+            this.leftSwapPicture = new System.Windows.Forms.PictureBox();
+            this.arrowPicture = new System.Windows.Forms.PictureBox();
+            this.rightSwapPicture = new System.Windows.Forms.PictureBox();
             this.menuStrip.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.contTab.SuspendLayout();
+            this.finalTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.contImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainRoleImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.leftSwapPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arrowPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rightSwapPicture)).BeginInit();
-            this.tabControl1.SuspendLayout();
-            this.contTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.contImage)).BeginInit();
-            this.finalTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.finalImage)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -111,6 +114,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.mainRoleImage);
+            this.panel1.Controls.Add(this.mainShipText);
             this.panel1.Controls.Add(this.leftSwapPicture);
             this.panel1.Controls.Add(this.arrowPicture);
             this.panel1.Controls.Add(this.rightSwapPicture);
@@ -120,37 +125,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(971, 32);
             this.panel1.TabIndex = 1;
-            // 
-            // leftSwapPicture
-            // 
-            this.leftSwapPicture.Dock = System.Windows.Forms.DockStyle.Right;
-            this.leftSwapPicture.Location = new System.Drawing.Point(381, 0);
-            this.leftSwapPicture.Name = "leftSwapPicture";
-            this.leftSwapPicture.Size = new System.Drawing.Size(247, 32);
-            this.leftSwapPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.leftSwapPicture.TabIndex = 3;
-            this.leftSwapPicture.TabStop = false;
-            // 
-            // arrowPicture
-            // 
-            this.arrowPicture.Dock = System.Windows.Forms.DockStyle.Right;
-            this.arrowPicture.Image = global::GoI_Chaos_Helper.Properties.Resources.Arrow;
-            this.arrowPicture.Location = new System.Drawing.Point(628, 0);
-            this.arrowPicture.Name = "arrowPicture";
-            this.arrowPicture.Size = new System.Drawing.Size(96, 32);
-            this.arrowPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.arrowPicture.TabIndex = 2;
-            this.arrowPicture.TabStop = false;
-            // 
-            // rightSwapPicture
-            // 
-            this.rightSwapPicture.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rightSwapPicture.Location = new System.Drawing.Point(724, 0);
-            this.rightSwapPicture.Name = "rightSwapPicture";
-            this.rightSwapPicture.Size = new System.Drawing.Size(247, 32);
-            this.rightSwapPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rightSwapPicture.TabIndex = 1;
-            this.rightSwapPicture.TabStop = false;
             // 
             // nextButton
             // 
@@ -190,16 +164,6 @@
             this.contTab.Text = "Continuous";
             this.contTab.UseVisualStyleBackColor = true;
             // 
-            // contImage
-            // 
-            this.contImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contImage.Location = new System.Drawing.Point(3, 3);
-            this.contImage.Name = "contImage";
-            this.contImage.Size = new System.Drawing.Size(935, 360);
-            this.contImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.contImage.TabIndex = 0;
-            this.contImage.TabStop = false;
-            // 
             // finalTab
             // 
             this.finalTab.Controls.Add(this.finalImage);
@@ -211,6 +175,30 @@
             this.finalTab.Text = "Final";
             this.finalTab.UseVisualStyleBackColor = true;
             // 
+            // mainShipText
+            // 
+            this.mainShipText.BackColor = System.Drawing.Color.Red;
+            this.mainShipText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mainShipText.Dock = System.Windows.Forms.DockStyle.Right;
+            this.mainShipText.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainShipText.Location = new System.Drawing.Point(349, 0);
+            this.mainShipText.Name = "mainShipText";
+            this.mainShipText.ReadOnly = true;
+            this.mainShipText.Size = new System.Drawing.Size(32, 32);
+            this.mainShipText.TabIndex = 4;
+            this.mainShipText.Text = "1st";
+            this.mainShipText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // contImage
+            // 
+            this.contImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contImage.Location = new System.Drawing.Point(3, 3);
+            this.contImage.Name = "contImage";
+            this.contImage.Size = new System.Drawing.Size(935, 360);
+            this.contImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.contImage.TabIndex = 0;
+            this.contImage.TabStop = false;
+            // 
             // finalImage
             // 
             this.finalImage.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -220,6 +208,47 @@
             this.finalImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.finalImage.TabIndex = 0;
             this.finalImage.TabStop = false;
+            // 
+            // mainRoleImage
+            // 
+            this.mainRoleImage.Dock = System.Windows.Forms.DockStyle.Right;
+            this.mainRoleImage.Image = global::GoI_Chaos_Helper.Properties.Resources.WheelIcon;
+            this.mainRoleImage.Location = new System.Drawing.Point(317, 0);
+            this.mainRoleImage.Name = "mainRoleImage";
+            this.mainRoleImage.Size = new System.Drawing.Size(32, 32);
+            this.mainRoleImage.TabIndex = 5;
+            this.mainRoleImage.TabStop = false;
+            // 
+            // leftSwapPicture
+            // 
+            this.leftSwapPicture.Dock = System.Windows.Forms.DockStyle.Right;
+            this.leftSwapPicture.Location = new System.Drawing.Point(381, 0);
+            this.leftSwapPicture.Name = "leftSwapPicture";
+            this.leftSwapPicture.Size = new System.Drawing.Size(247, 32);
+            this.leftSwapPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.leftSwapPicture.TabIndex = 3;
+            this.leftSwapPicture.TabStop = false;
+            // 
+            // arrowPicture
+            // 
+            this.arrowPicture.Dock = System.Windows.Forms.DockStyle.Right;
+            this.arrowPicture.Image = global::GoI_Chaos_Helper.Properties.Resources.Arrow;
+            this.arrowPicture.Location = new System.Drawing.Point(628, 0);
+            this.arrowPicture.Name = "arrowPicture";
+            this.arrowPicture.Size = new System.Drawing.Size(96, 32);
+            this.arrowPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.arrowPicture.TabIndex = 2;
+            this.arrowPicture.TabStop = false;
+            // 
+            // rightSwapPicture
+            // 
+            this.rightSwapPicture.Dock = System.Windows.Forms.DockStyle.Right;
+            this.rightSwapPicture.Location = new System.Drawing.Point(724, 0);
+            this.rightSwapPicture.Name = "rightSwapPicture";
+            this.rightSwapPicture.Size = new System.Drawing.Size(247, 32);
+            this.rightSwapPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rightSwapPicture.TabIndex = 1;
+            this.rightSwapPicture.TabStop = false;
             // 
             // Form1
             // 
@@ -236,16 +265,17 @@
             this.menuStrip.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.leftSwapPicture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.arrowPicture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rightSwapPicture)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.contTab.ResumeLayout(false);
             this.contTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.contImage)).EndInit();
             this.finalTab.ResumeLayout(false);
             this.finalTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.contImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.finalImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainRoleImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leftSwapPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arrowPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rightSwapPicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,6 +300,8 @@
         private System.Windows.Forms.TabPage finalTab;
         private System.Windows.Forms.PictureBox contImage;
         private System.Windows.Forms.PictureBox finalImage;
+        private System.Windows.Forms.PictureBox mainRoleImage;
+        private System.Windows.Forms.TextBox mainShipText;
     }
 }
 

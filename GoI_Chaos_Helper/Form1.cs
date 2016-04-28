@@ -253,6 +253,35 @@ namespace GoI_Chaos_Helper
             int pos1 = currentPos, pos2 = currentPosOfName[name1];
             leftSwapPicture.Image = names[name1];
             rightSwapPicture.Image = names[name2];
+            switch(currentPos % 4)
+            {
+                case 0:
+                    mainRoleImage.Image = Properties.Resources.WheelIcon;
+                    break;
+                case 1:
+                    mainRoleImage.Image = Properties.Resources.BulletIcon;
+                    break;
+                default:
+                    mainRoleImage.Image = Properties.Resources.WrenchIcon;
+                    break;
+            }
+            mainShipText.BackColor = (currentPos < rects.Count / 2 ? Color.Red : Color.Blue);
+            switch ((currentPos < rects.Count / 2) ? (currentPos / 4) : ((currentPos / 4) - (rects.Count / 8)))
+            {
+                case 0:
+                    mainShipText.Text = "1st";
+                    break;
+                case 1:
+                    mainShipText.Text = "2nd";
+                    break;
+                case 2:
+                    mainShipText.Text = "3rd";
+                    break;
+                case 3:
+                    mainShipText.Text = "4th";
+                    break;
+
+            }
             currentNameInPos[pos1] = name1;
             currentNameInPos[pos2] = name2;
             currentPosOfName[name1] = pos1;
