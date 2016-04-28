@@ -81,6 +81,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\BulletIcon.png" />
+    <None Include="Resources\WheelIcon.png" />
+    <None Include="Resources\WrenchIcon.png" />
     <Content Include="Tasks.txt" />
   </ItemGroup>
   <ItemGroup>
